@@ -1,0 +1,61 @@
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Dataset\README.txt
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Dataset\smart_grid_dataset.csv
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Client.exe.config
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Client.exe
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Client.pdb
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Common.dll
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Common.pdb
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.Up2Date
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.exe
+C:\Users\Darie\Desktop\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.pdb
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Dataset\README.txt
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Dataset\smart_grid_dataset.csv
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Client.exe.config
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Client.exe
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Client.pdb
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Common.dll
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Common.pdb
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.exe
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.pdb
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Dataset\test_invalid_data.csv
+C:\Users\Lenovo\OneDrive\Radna povrsina\ProjektiFTN\Priprema_K2\Priprema_K2\Client\bin\Debug\Dataset\test_mixed_data.csv
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.exe
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.pdb
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\bin\Debug\Client.exe.config
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\bin\Debug\Client.exe
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\bin\Debug\Client.pdb
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\bin\Debug\Common.dll
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\bin\Debug\Common.pdb
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\Lenovo\OneDrive\Radna povrsina\MilosProjekat\Priprema_K2\Priprema_K2\Client\bin\Debug\Dataset\cleaned_weather.csv
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Dataset\cleaned_weather.csv
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Client.exe.config
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Client.exe
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Client.pdb
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Common.dll
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Common.pdb
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.csproj.Up2Date
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.exe
+C:\Users\Darije\OneDrive\Radna površina\ProjektiFTN\ProjektiFTN\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.pdb
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Dataset\cleaned_weather.csv
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Client.exe.config
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Client.exe
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Client.pdb
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Common.dll
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\bin\Debug\Common.pdb
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.csproj.Up2Date
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.exe
+C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.pdb

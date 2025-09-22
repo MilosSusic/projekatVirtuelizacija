@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Darie\\Desktop\\ProjektiFTN\\Priprema_K2\\Priprema_K2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C6BDBE5B-344F-4399-817D-01458AB09E28}|Server\\Server.csproj|c:\\users\\darie\\desktop\\projektiftn\\priprema_k2\\priprema_k2\\server\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6BDBE5B-344F-4399-817D-01458AB09E28}|Server\\Server.csproj|solutionrelative:server\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6BDBE5B-344F-4399-817D-01458AB09E28}|Server\\Server.csproj|C:\\Users\\Darie\\Desktop\\ProjektiFTN\\Priprema_K2\\Priprema_K2\\server\\libraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6BDBE5B-344F-4399-817D-01458AB09E28}|Server\\Server.csproj|solutionrelative:server\\libraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6BDBE5B-344F-4399-817D-01458AB09E28}|Server\\Server.csproj|C:\\Users\\Darie\\Desktop\\ProjektiFTN\\Priprema_K2\\Priprema_K2\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6BDBE5B-344F-4399-817D-01458AB09E28}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Database.cs",
+              "DocumentMoniker": "C:\\Users\\Darie\\Desktop\\ProjektiFTN\\Priprema_K2\\Priprema_K2\\Server\\Database.cs",
+              "RelativeDocumentMoniker": "Server\\Database.cs",
+              "ToolTip": "C:\\Users\\Darie\\Desktop\\ProjektiFTN\\Priprema_K2\\Priprema_K2\\Server\\Database.cs",
+              "RelativeToolTip": "Server\\Database.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T16:01:41.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LibraryService.cs",
+              "DocumentMoniker": "C:\\Users\\Darie\\Desktop\\ProjektiFTN\\Priprema_K2\\Priprema_K2\\Server\\LibraryService.cs",
+              "RelativeDocumentMoniker": "Server\\LibraryService.cs",
+              "ToolTip": "C:\\Users\\Darie\\Desktop\\ProjektiFTN\\Priprema_K2\\Priprema_K2\\Server\\LibraryService.cs",
+              "RelativeToolTip": "Server\\LibraryService.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T16:01:34.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Darie\\Desktop\\ProjektiFTN\\Priprema_K2\\Priprema_K2\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "C:\\Users\\Darie\\Desktop\\ProjektiFTN\\Priprema_K2\\Priprema_K2\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T15:56:29.385Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

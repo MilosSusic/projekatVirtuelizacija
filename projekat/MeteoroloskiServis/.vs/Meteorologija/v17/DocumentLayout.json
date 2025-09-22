@@ -1,0 +1,227 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5772B4-19A3-4D93-BD97-DEA31A2F7447}|Client\\Client.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\client\\weatherclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5772B4-19A3-4D93-BD97-DEA31A2F7447}|Client\\Client.csproj|solutionrelative:client\\weatherclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6BDBE5B-344F-4399-817D-01458AB09E28}|Server\\Server.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\server\\weatherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6BDBE5B-344F-4399-817D-01458AB09E28}|Server\\Server.csproj|solutionrelative:server\\weatherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6BDBE5B-344F-4399-817D-01458AB09E28}|Server\\Server.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6BDBE5B-344F-4399-817D-01458AB09E28}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0C8C0CA-D412-4107-8977-14497E293395}|Common\\Common.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\common\\weathersample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0C8C0CA-D412-4107-8977-14497E293395}|Common\\Common.csproj|solutionrelative:common\\weathersample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0C8C0CA-D412-4107-8977-14497E293395}|Common\\Common.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\common\\weatherresourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0C8C0CA-D412-4107-8977-14497E293395}|Common\\Common.csproj|solutionrelative:common\\weatherresourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0C8C0CA-D412-4107-8977-14497E293395}|Common\\Common.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\common\\weathercontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0C8C0CA-D412-4107-8977-14497E293395}|Common\\Common.csproj|solutionrelative:common\\weathercontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5772B4-19A3-4D93-BD97-DEA31A2F7447}|Client\\Client.csproj|c:\\users\\user\\desktop\\projekat virtuelizacija\\projekat\\meteoroloskiservis\\client\\weathercsvreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5772B4-19A3-4D93-BD97-DEA31A2F7447}|Client\\Client.csproj|solutionrelative:client\\weathercsvreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5772B4-19A3-4D93-BD97-DEA31A2F7447}|Client\\Client.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\client\\weatherdisposetester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5772B4-19A3-4D93-BD97-DEA31A2F7447}|Client\\Client.csproj|solutionrelative:client\\weatherdisposetester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0C8C0CA-D412-4107-8977-14497E293395}|Common\\Common.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\common\\disposetester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0C8C0CA-D412-4107-8977-14497E293395}|Common\\Common.csproj|solutionrelative:common\\disposetester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0C8C0CA-D412-4107-8977-14497E293395}|Common\\Common.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\common\\customexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0C8C0CA-D412-4107-8977-14497E293395}|Common\\Common.csproj|solutionrelative:common\\customexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5772B4-19A3-4D93-BD97-DEA31A2F7447}|Client\\Client.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5772B4-19A3-4D93-BD97-DEA31A2F7447}|Client\\Client.csproj|solutionrelative:client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5772B4-19A3-4D93-BD97-DEA31A2F7447}|Client\\Client.csproj|C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\client\\dataset\\cleaned_weather.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3E5772B4-19A3-4D93-BD97-DEA31A2F7447}|Client\\Client.csproj|solutionrelative:client\\dataset\\cleaned_weather.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "cleaned_weather.csv",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Client\\Dataset\\cleaned_weather.csv",
+              "RelativeDocumentMoniker": "Client\\Dataset\\cleaned_weather.csv",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Client\\Dataset\\cleaned_weather.csv",
+              "RelativeToolTip": "Client\\Dataset\\cleaned_weather.csv",
+              "ViewState": "AQIAAPUBAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2025-09-18T07:43:51.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Server\\WeatherService.cs",
+              "RelativeDocumentMoniker": "Server\\WeatherService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Server\\WeatherService.cs",
+              "RelativeToolTip": "Server\\WeatherService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAPwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T07:35:52.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T07:35:47.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherSample.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Common\\WeatherSample.cs",
+              "RelativeDocumentMoniker": "Common\\WeatherSample.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Common\\WeatherSample.cs",
+              "RelativeToolTip": "Common\\WeatherSample.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:27:32.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WeatherResourceManager.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Common\\WeatherResourceManager.cs",
+              "RelativeDocumentMoniker": "Common\\WeatherResourceManager.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Common\\WeatherResourceManager.cs",
+              "RelativeToolTip": "Common\\WeatherResourceManager.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:27:30.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeatherContracts.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Common\\WeatherContracts.cs",
+              "RelativeDocumentMoniker": "Common\\WeatherContracts.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Common\\WeatherContracts.cs",
+              "RelativeToolTip": "Common\\WeatherContracts.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB8AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:27:29.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DisposeTester.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Common\\DisposeTester.cs",
+              "RelativeDocumentMoniker": "Common\\DisposeTester.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Common\\DisposeTester.cs",
+              "RelativeToolTip": "Common\\DisposeTester.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:27:24.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CustomException.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Common\\CustomException.cs",
+              "RelativeDocumentMoniker": "Common\\CustomException.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Common\\CustomException.cs",
+              "RelativeToolTip": "Common\\CustomException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:27:22.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WeatherDisposeTester.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Client\\WeatherDisposeTester.cs",
+              "RelativeDocumentMoniker": "Client\\WeatherDisposeTester.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Client\\WeatherDisposeTester.cs",
+              "RelativeToolTip": "Client\\WeatherDisposeTester.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAAB0AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:27:17.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WeatherCsvReader.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Client\\WeatherCsvReader.cs",
+              "RelativeDocumentMoniker": "Client\\WeatherCsvReader.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Client\\WeatherCsvReader.cs",
+              "RelativeToolTip": "Client\\WeatherCsvReader.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAAHgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:27:12.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeatherClient.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Client\\WeatherClient.cs",
+              "RelativeDocumentMoniker": "Client\\WeatherClient.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Client\\WeatherClient.cs",
+              "RelativeToolTip": "Client\\WeatherClient.cs",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAAAJoAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:27:04.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Client\\Program.cs",
+              "RelativeDocumentMoniker": "Client\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\PROJEKAT VIRTUELIZACIJA\\projekat\\MeteoroloskiServis\\Client\\Program.cs",
+              "RelativeToolTip": "Client\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:27:00.91Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
