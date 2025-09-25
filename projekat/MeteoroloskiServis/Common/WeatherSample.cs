@@ -52,7 +52,7 @@ namespace Common
             bool parsed = false;
 
             // Attempt parsing based on expected format:
-            // Expected format: date,p,T,Tpot,Tdew,rh,VPmax,VPact,VPdef,sh,...
+            // date,p,T,Tpot,Tdew,rh,VPmax,VPact,VPdef,sh,...
             if (parts.Length >= 10)
             {
                 try
