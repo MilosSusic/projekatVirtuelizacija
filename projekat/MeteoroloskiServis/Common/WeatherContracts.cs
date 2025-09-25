@@ -61,11 +61,11 @@ namespace Common
         public string Status { get; set; }
     }
 
-    [ServiceContract]
+    [ServiceContract] // Definiše ugovor WCF servisa za rad sa vremenskim podacima
     public interface IWeatherService
     {
         [OperationContract]
-        [FaultContract(typeof(CustomException))]
+        [FaultContract(typeof(CustomException))] // Greške se prenose preko CustomException
         WeatherAck StartSession(WeatherSessionMeta meta);
 
         [OperationContract]

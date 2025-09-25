@@ -9,7 +9,7 @@ namespace Common
     public class WeatherSample
     {
         [DataMember]
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } // Measurement date and time
 
         [DataMember]
         public double T { get; set; } // Temperature (degC)
@@ -34,6 +34,7 @@ namespace Common
             sample = null;
             error = string.Empty;
 
+            // Check if line is empty
             if (string.IsNullOrWhiteSpace(csvLine))
             {
                 error = "Empty line";
@@ -50,6 +51,7 @@ namespace Common
 
             bool parsed = false;
 
+            // Attempt parsing based on expected format:
             // Expected format: date,p,T,Tpot,Tdew,rh,VPmax,VPact,VPdef,sh,...
             if (parts.Length >= 10)
             {
@@ -127,6 +129,7 @@ namespace Common
 
         public override string ToString()
         {
+            // Formatted output for debugging or logging purposes
             return $"Date={Date:O}, T={T:F2}°C, P={Pressure:F2}mbar, Tpot={Tpot:F2}K, Tdew={Tdew:F2}°C, RH={Rh:F2}%, SH={Sh:F2}g/kg";
         }
     }
