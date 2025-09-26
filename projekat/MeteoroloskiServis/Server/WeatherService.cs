@@ -8,6 +8,11 @@ using System.ServiceModel;
 
 namespace Server
 {
+    /// <summary>
+    /// WeatherService (WCF) - provides methods for clients to 
+    /// send weather data, manage sessions and handle alerts.
+    /// </summary>
+
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Single)]
     public class WeatherService : IWeatherService, IDisposable
     {
@@ -28,8 +33,8 @@ namespace Server
         private double _runningMeanT;
         private double _runningMeanRH;
         private double _runningMeanTdew;
-        private long _count;
-        private int _written;
+        private long _count;    // total number of samples processed
+        private int _written;   // number of samples successfully written
         private readonly object _lockObject = new object();
 
         // Events for weather monitoring
@@ -58,6 +63,7 @@ namespace Server
         {
             lock (_lockObject)
             {
+                // Thread-safe: only one thread can initialize session at a time
                 try
                 {
                     if (meta == null)
@@ -94,6 +100,7 @@ namespace Server
                     _count = 0;
                     _written = 0;
 
+                    // Notify external subscribers and log start
                     OnTransferStarted?.Invoke(this, $"Meteorološka sesija {_currentSessionId} pokrenuta u {meta.StartedAt:O}\nFolder: {sessionDir}");
                     Console.WriteLine($"✅ Sesija uspešno pokrenuta - threshold vrednosti: T={_tThreshold}°C, RH={_rhThreshold}%, DEW={_dewThreshold}°C, Odstupanje={_deviationPct}%");
                     
@@ -110,6 +117,7 @@ namespace Server
         {
             lock (_lockObject)
             {
+                // Thread-safe: ensures only one thread processes a sample at a time
                 try
                 {
                     if (_resourceManager?.MeasurementsWriter == null)
@@ -141,7 +149,8 @@ namespace Server
                             sample.Rh.ToString(CultureInfo.InvariantCulture),
                             sample.Sh.ToString(CultureInfo.InvariantCulture)));
                         _written++;
-                        
+
+                        // Log first few samples fully for debugging
                         if (_written <= 3)
                         {
                             Console.WriteLine($"\n✅ Server prihvatio uzorak {_written}: {sample}");
@@ -154,7 +163,7 @@ namespace Server
                         return new WeatherAck { Success = false, Message = ioex.Message, Status = "IN_PROGRESS" };
                     }
 
-                    // ===== ANALITIKA 1: Detekcija nagle promene temperature (ΔT) =====
+                    // ===== ANALYTICS 1: Detection of sudden temperature change (ΔT) =====
                     if (_lastTemperature.HasValue)
                     {
                         double deltaT = sample.T - _lastTemperature.Value;
@@ -169,7 +178,7 @@ namespace Server
                     }
                     _lastTemperature = sample.T;
 
-                    // ===== ANALITIKA 2: Detekcija nagle promene vlažnosti (ΔRH) =====
+                    // ===== ANALYTICS 2: Detection of sudden humidity change (ΔRH) =====
                     if (_lastRH.HasValue)
                     {
                         double deltaRH = sample.Rh - _lastRH.Value;
@@ -184,7 +193,7 @@ namespace Server
                     }
                     _lastRH = sample.Rh;
 
-                    // ===== ANALITIKA 3: Detekcija nagle promene tačke rosišta (ΔDEW) =====
+                    // ===== ANALYTICS 3: Detection of sudden dew point change (ΔDEW) =====
                     if (_lastTdew.HasValue)
                     {
                         double deltaDEW = sample.Tdew - _lastTdew.Value;
@@ -199,7 +208,7 @@ namespace Server
                     }
                     _lastTdew = sample.Tdew;
 
-                    // ===== Running mean i ±25% odstupanje za temperaturu =====
+                    // ===== Running mean and ±25% deviation check for temperature =====
                     _runningMeanT = ((_runningMeanT * _count) + sample.T) / (_count + 1);
                     double lowT = _runningMeanT * (1 - _deviationPct / 100.0);
                     double highT = _runningMeanT * (1 + _deviationPct / 100.0);
