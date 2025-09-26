@@ -27,6 +27,7 @@ namespace Client
                 _fileStream = new FileStream(csvFilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
                 _reader = new StreamReader(_fileStream);
 
+
                 // Create rejects file
                 Directory.CreateDirectory(Path.GetDirectoryName(rejectsFilePath));
                 _rejectsStream = new FileStream(rejectsFilePath, FileMode.Create, FileAccess.Write, FileShare.Read);
