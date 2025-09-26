@@ -60,3 +60,13 @@ C:\Users\bozan\OneDrive\Radna površina\METEOROLOGIJA\projekat\MeteoroloskiServi
 C:\Users\bozan\OneDrive\Radna površina\METEOROLOGIJA\projekat\MeteoroloskiServis\Server\obj\Debug\Server.csproj.Up2Date
 C:\Users\bozan\OneDrive\Radna površina\METEOROLOGIJA\projekat\MeteoroloskiServis\Server\obj\Debug\Server.exe
 C:\Users\bozan\OneDrive\Radna površina\METEOROLOGIJA\projekat\MeteoroloskiServis\Server\obj\Debug\Server.pdb
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Server\bin\Debug\Server.exe.config
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Server\bin\Debug\Server.exe
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Server\bin\Debug\Server.pdb
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Server\bin\Debug\Common.dll
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Server\bin\Debug\Common.pdb
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Server\obj\Debug\Server.csproj.Up2Date
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Server\obj\Debug\Server.exe
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Server\obj\Debug\Server.pdb

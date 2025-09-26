@@ -50,14 +50,14 @@ namespace Client
                     if (Directory.Exists(binDir))
                     {
                         var files = Directory.GetFiles(binDir, "*.csv")
-                            .Where(f => !Path.GetFileName(f).StartsWith("rejects_"))
+                            .Where(f => !Path.GetFileName(f).StartsWith("rejects_"))     //izbacuje sve one koji su odbaceni
                             .ToArray();
                         if (files.Length > 0) found = files[0];
                     }
-                    if (found == null && Directory.Exists(projDir))
+                    if (found == null && Directory.Exists(projDir))           //da vidimo jesu li u projektu
                     {
-                        var files = Directory.GetFiles(projDir, "*.csv")
-                            .Where(f => !Path.GetFileName(f).StartsWith("rejects_"))
+                        var files = Directory.GetFiles(projDir, "*.csv")                   
+                            .Where(f => !Path.GetFileName(f).StartsWith("rejects_"))     //isto filtriramo one sa rejects
                             .ToArray();
                         if (files.Length > 0) found = files[0];
                     }
@@ -118,7 +118,7 @@ namespace Client
                 {
                     while (sent < 100 && reader.TryReadNext(out var sample))
                     {
-                        var resp = weatherProxy.PushSample(sample);
+                        var resp = weatherProxy.PushSample(sample);  //server vraca za svaki red
                         sent++;
                         if (resp.Success)
                             successful++;
@@ -137,7 +137,7 @@ namespace Client
                     Console.WriteLine($"\nPrihvaćeno={reader.AcceptedCount} Odbačeno={reader.RejectedCount}");
                 }
                 
-                var end = weatherProxy.EndSession();
+                var end = weatherProxy.EndSession();  //zavrsetak sesije
                 Console.WriteLine($"\nMetorološka sesija završena: {end.Status}");
                 Console.WriteLine($"Ukupno poslato: {sent}, Uspešno: {successful}, Neuspešno: {failed}");
                 if (sent == 0)

@@ -34,3 +34,9 @@ C:\Users\bozan\OneDrive\Radna površina\METEOROLOGIJA\projekat\MeteoroloskiServi
 C:\Users\bozan\OneDrive\Radna površina\METEOROLOGIJA\projekat\MeteoroloskiServis\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\bozan\OneDrive\Radna površina\METEOROLOGIJA\projekat\MeteoroloskiServis\Common\obj\Debug\Common.dll
 C:\Users\bozan\OneDrive\Radna površina\METEOROLOGIJA\projekat\MeteoroloskiServis\Common\obj\Debug\Common.pdb
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Common\bin\Debug\Common.dll
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Common\bin\Debug\Common.pdb
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Common\obj\Debug\Common.dll
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Common\obj\Debug\Common.pdb

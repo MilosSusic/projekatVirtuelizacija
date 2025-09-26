@@ -59,3 +59,14 @@ C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\
 C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.csproj.Up2Date
 C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.exe
 C:\Users\User\Desktop\PROJEKAT VIRTUELIZACIJA\Milos projekat\MeteoroloskiServis\Client\obj\Debug\Client.pdb
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\bin\Debug\Dataset\cleaned_weather.csv
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\bin\Debug\Client.exe.config
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\bin\Debug\Client.exe
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\bin\Debug\Client.pdb
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\bin\Debug\Common.dll
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\bin\Debug\Common.pdb
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\obj\Debug\Client.csproj.Up2Date
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\obj\Debug\Client.exe
+C:\Users\User\Desktop\PROJEKAT NOVI VIRTUELIZACIJA\projekat\MeteoroloskiServis\Client\obj\Debug\Client.pdb
