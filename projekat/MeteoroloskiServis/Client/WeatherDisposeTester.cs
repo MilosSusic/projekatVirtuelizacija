@@ -1,6 +1,7 @@
 using Common;
 using System;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Client
 {
@@ -21,11 +22,12 @@ namespace Client
             
             try
             {
-                // Create test CSV file
+                // Kreiramo privremeni CSV fajl samo za potrebe testiranja Dispose pattern-a
                 File.WriteAllText(testCsv, "Date,T,Pressure,Tpot,Tdew,Rh,Sh\n2024-01-01,20.5,1013.25,293.65,15.2,73.8,11.2\n");
                 Console.WriteLine($"✅ Test CSV fajl kreiran: {testCsv}");
-                
-                // Test 1: Normal dispose
+
+
+                // Test 1: Normalno zatvaranje
                 Console.WriteLine("\n--- Test 1: Normalno zatvaranje ---");
                 WeatherSample sample;
                 using (var reader = new WeatherCsvReader(testCsv, testRejects))
@@ -34,8 +36,8 @@ namespace Client
                     Console.WriteLine($"✅ Čitanje: {result}, Prihvaćeno: {reader.AcceptedCount}");
                 } // Dispose automatski
                 Console.WriteLine("✅ WeatherCsvReader automatski disposed");
-                
-                // Test 2: Exception during read
+
+                // Test 2: Izuzetak tokom čitanja
                 Console.WriteLine("\n--- Test 2: Izuzetak tokom čitanja ---");
                 try
                 {
@@ -58,7 +60,7 @@ namespace Client
             }
             finally
             {
-                // Cleanup test files
+                // Cleanup test fajlova
                 try
                 {
                     if (File.Exists(testCsv)) File.Delete(testCsv);
