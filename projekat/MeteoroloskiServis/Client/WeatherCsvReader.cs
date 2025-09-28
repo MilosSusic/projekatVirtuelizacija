@@ -28,7 +28,7 @@ namespace Client
                 _reader = new StreamReader(_fileStream);
 
 
-                // Create rejects file
+                // Kreiranje fajla za odbacene redove
                 Directory.CreateDirectory(Path.GetDirectoryName(rejectsFilePath));
                 _rejectsStream = new FileStream(rejectsFilePath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 _rejectsWriter = new StreamWriter(_rejectsStream) { AutoFlush = true };
@@ -36,7 +36,7 @@ namespace Client
             }
             catch (Exception ex)
             {
-                // Cleanup on initialization failure
+                // Čišćenje resursa ako inicijalizacija ne uspe
                 Dispose();
                 throw new InvalidOperationException($"Failed to initialize CSV reader: {ex.Message}", ex);
             }
@@ -54,13 +54,13 @@ namespace Client
                 string line;
                 while ((line = _reader.ReadLine()) != null)
                 {
-                    // Skip header line
+                    // Preskoči header liniju
                     if (!_headerSkipped)
                     {
                         _headerSkipped = true;
                         if (line.ToLowerInvariant().Contains("date") || line.ToLowerInvariant().Contains("timestamp"))
                         {
-                            continue; // Skip header
+                            continue; // Preskoči header
                         }
                     }
 
@@ -76,14 +76,14 @@ namespace Client
                     {
                         RejectedCount++;
                         _rejectsWriter?.WriteLine($"\"{error.Replace("\"", "\"\"")}\",\"{line.Replace("\"", "\"\"")}\"");
-                        
-                        // Continue to next line instead of returning false
-                        // This allows processing to continue even with some bad lines
+
+                        // Nastavlja na sledeći red umesto da vrati false
+                        // Ovo omogućava da obrada nastavi čak i ako neki redovi nisu validni
                         continue;
                     }
                 }
 
-                return false; // End of file
+                return false; // Kraj fajla
             }
             catch (Exception ex)
             {
@@ -116,7 +116,7 @@ namespace Client
             {
                 if (disposing)
                 {
-                    // Dispose managed resources
+                    // Oslobađanje upravljanih resursa
                     try { _reader?.Dispose(); } catch { }
                     try { _fileStream?.Dispose(); } catch { }
                     try { _rejectsWriter?.Flush(); _rejectsWriter?.Dispose(); } catch { }
@@ -129,7 +129,7 @@ namespace Client
 
         ~WeatherCsvReader()
         {
-            Dispose(false);
+            Dispose(false); // Destructor za čišćenje resursa u slučaju da Dispose nije pozvan
         }
     }
 }

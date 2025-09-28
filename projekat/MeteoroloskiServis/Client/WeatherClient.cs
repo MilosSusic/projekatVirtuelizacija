@@ -17,6 +17,7 @@ namespace Client
             
             try
             {
+                // Kreiranje kanala za povezivanje sa WCF servisom
                 weatherFactory = new ChannelFactory<IWeatherService>("Weather");
                 weatherProxy = weatherFactory.CreateChannel();
                 
@@ -30,19 +31,19 @@ namespace Client
                 return;
             }
 
-            // Weather demo
+            // Demo čitanja i slanja podataka
             Console.WriteLine("Unesite putanju do CSV fajla sa meteorološkim podacima (Enter = ./Client/Dataset/cleaned_weather.csv):");
             string path = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(path))
             {
-                // Try to find weather dataset
+                // Pokušaj da pronađe fajl u bin i projekt direktorijumu
                 string binDataset = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Dataset", "cleaned_weather.csv");
                 string projDataset = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "Client", "Dataset", "cleaned_weather.csv");
                 path = File.Exists(binDataset) ? binDataset : projDataset;
 
                 if (!File.Exists(path))
                 {
-                    // Try to find any CSV file in Dataset directories
+                    // Pokušaj da pronađe bilo koji CSV fajl u Dataset direktorijumima
                     string binDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Dataset");
                     string projDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "Client", "Dataset");
                     string found = null;
@@ -68,7 +69,7 @@ namespace Client
                 }
             }
 
-            // Validate file exists
+            // Validacija da fajl postoji
             while (!File.Exists(path))
             {
                 Console.WriteLine("CSV fajl nije pronađen. Unesite punu putanju do .csv fajla:");
@@ -80,7 +81,7 @@ namespace Client
                 }
             }
 
-            // Create weather session metadata
+            // Kreiranje metapodataka sesije
             var meta = new WeatherSessionMeta
             {
                 SessionId = Guid.NewGuid().ToString("N"),
@@ -158,8 +159,8 @@ namespace Client
                 try
                 {
                     if (weatherProxy is ICommunicationObject commObj)
-                        commObj.Close();
-                    weatherFactory?.Close();
+                        commObj.Close();    // zatvaranje komunikacije sa serverom
+                    weatherFactory?.Close();    // zatvaranje kanala
                 }
                 catch { }
             }
