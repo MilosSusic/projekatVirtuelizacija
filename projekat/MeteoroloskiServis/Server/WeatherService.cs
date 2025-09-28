@@ -166,6 +166,8 @@ namespace Server
                     // ===== ANALYTICS 1: Detection of sudden temperature change (ΔT) =====
                     if (_lastTemperature.HasValue)
                     {
+
+
                         double deltaT = sample.T - _lastTemperature.Value;
                         if (Math.Abs(deltaT) > _tThreshold)
                         {
