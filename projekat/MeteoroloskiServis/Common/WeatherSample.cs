@@ -9,39 +9,42 @@ namespace Common
     public class WeatherSample
     {
         [DataMember]
-        public DateTime Date { get; set; } // Measurement date and time
+        public DateTime Date { get; set; } // Datum i vreme merenja
 
         [DataMember]
-        public double T { get; set; } // Temperature (degC)
+        public double T { get; set; } // Temperatura (°C)
 
         [DataMember]
-        public double Pressure { get; set; } // Pressure (mbar)
+        public double Pressure { get; set; } // Pritisak (mbar)
 
         [DataMember]
-        public double Tpot { get; set; } // Potential Temperature (K)
+        public double Tpot { get; set; } // Potencijalna temperatura (K)
 
         [DataMember]
-        public double Tdew { get; set; } // Dew Point Temperature (degC)
+        public double Tdew { get; set; } // Temperatura rosišta (°C)
 
         [DataMember]
-        public double Rh { get; set; } // Relative Humidity (%)
+        public double Rh { get; set; } // Relativna vlažnost (%)
 
         [DataMember]
-        public double Sh { get; set; } // Specific Humidity (g/kg)
+        public double Sh { get; set; } // Specifična vlažnost (g/kg)
 
+        /// <summary>
+        /// Pokušava da parsira CSV liniju u WeatherSample objekat
+        /// </summary>
         public static bool TryParseCsv(string csvLine, out WeatherSample sample, out string error)
         {
             sample = null;
             error = string.Empty;
 
-            // Check if line is empty
+            // Provera da li je linija prazna
             if (string.IsNullOrWhiteSpace(csvLine))
             {
                 error = "Empty line";
                 return false;
             }
 
-            // Split CSV line and remove quotes
+            // Razdvajanje CSV linije i uklanjanje navodnika
             string cleaned = csvLine.Replace("\"", "");
             string[] parts = cleaned.Split(new[] { ',', ';', '\t' }, StringSplitOptions.None);
 
@@ -51,19 +54,19 @@ namespace Common
 
             bool parsed = false;
 
-            // Attempt parsing based on expected format:
+            // Pokušaj parsiranja prema očekivanom formatu:
             // date,p,T,Tpot,Tdew,rh,VPmax,VPact,VPdef,sh,...
             if (parts.Length >= 10)
             {
                 try
                 {
-                    // Parse Date (first column - 'date')
+                    // Parsiranje datuma (prva kolona - 'date')
                     if (DateTime.TryParse(parts[0], ci, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal, out DateTime tmpDate))
                         date = tmpDate;
                     else
                         date = DateTime.UtcNow;
 
-                    // Parse weather parameters based on new format:
+                    // Parsiranje meteoroloških parametara prema novom formatu:
                     // 0=date, 1=p(pressure), 2=T, 3=Tpot, 4=Tdew, 5=rh, 6=VPmax, 7=VPact, 8=VPdef, 9=sh
                     if (double.TryParse(parts[1], NumberStyles.Float, ci, out pressure) &&  // p
                         double.TryParse(parts[2], NumberStyles.Float, ci, out t) &&         // T
@@ -82,7 +85,7 @@ namespace Common
                 }
             }
 
-            // Fallback: extract numeric tokens in order
+            // Rezervni plan: izvlačenje numeričkih tokena po redu
             if (!parsed)
             {
                 var matches = Regex.Matches(cleaned, @"-?\d+(?:\.\d+)?");
@@ -127,9 +130,9 @@ namespace Common
             return true;
         }
 
+        // Formatiran izlaz za debagovanje ili logovanje
         public override string ToString()
         {
-            // Formatted output for debugging or logging purposes
             return $"Date={Date:O}, T={T:F2}°C, P={Pressure:F2}mbar, Tpot={Tpot:F2}K, Tdew={Tdew:F2}°C, RH={Rh:F2}%, SH={Sh:F2}g/kg";
         }
     }

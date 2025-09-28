@@ -30,29 +30,29 @@ namespace Common
 
             try
             {
-                // Create measurements stream
+                // Kreiranje tokova za merenja
                 string measurementsPath = Path.Combine(sessionDirectory, "measurements_session.csv");
                 _measurementsStream = new FileStream(measurementsPath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 _measurementsWriter = new StreamWriter(_measurementsStream) { AutoFlush = true };
 
-                // Create rejects stream
+                // Kreiranje tokova za odbacene uzorke
                 string rejectsPath = Path.Combine(sessionDirectory, "rejects.csv");
                 _rejectsStream = new FileStream(rejectsPath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 _rejectsWriter = new StreamWriter(_rejectsStream) { AutoFlush = true };
 
-                // Create analytics stream
+                // Kreiranje tokova za analitiku i alarme
                 string analyticsPath = Path.Combine(sessionDirectory, "analytics_alerts.csv");
                 _analyticsStream = new FileStream(analyticsPath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 _analyticsWriter = new StreamWriter(_analyticsStream) { AutoFlush = true };
 
-                // Write headers to match our parsed format
+                // Pisanje zaglavlja da se poklapa sa očekivanim formatom
                 _measurementsWriter.WriteLine("Date,T,Pressure,Tpot,Tdew,Rh,Sh");
                 _rejectsWriter.WriteLine("Reason,Line");
                 _analyticsWriter.WriteLine("Timestamp,AlertType,Message,Value,Threshold");
             }
             catch (Exception ex)
             {
-                // Cleanup on initialization failure
+                // Čišćenje resursa u slučaju greške prilikom inicijalizacije
                 Dispose();
                 throw new InvalidOperationException($"Failed to initialize streams: {ex.Message}", ex);
             }
@@ -64,13 +64,15 @@ namespace Common
             GC.SuppressFinalize(this);
         }
 
+        // disposing = true: poziva se iz Dispose() metode, oslobadja upravljane resurse
+        // disposing = false: poziva se iz finalizatora (~WeatherResourceManager), oslobadja samo ne-upravljane resurse
         protected virtual void Dispose(bool disposing)
         {
             if (!_disposed)
             {
                 if (disposing)
                 {
-                    // Dispose managed resources
+                    // Oslobađanje upravljanih resursa
                     try { _measurementsWriter?.Flush(); _measurementsWriter?.Dispose(); } catch { }
                     try { _measurementsStream?.Dispose(); } catch { }
                     try { _rejectsWriter?.Flush(); _rejectsWriter?.Dispose(); } catch { }

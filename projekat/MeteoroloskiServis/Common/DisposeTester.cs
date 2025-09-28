@@ -21,8 +21,8 @@ namespace Common
             {
                 Directory.CreateDirectory(testDir);
                 Console.WriteLine($"✅ Test direktorijum kreiran: {testDir}");
-                
-                // Test 1: Normal dispose
+
+                // Test 1: Normalno zatvaranje resursa
                 Console.WriteLine("\n--- Test 1: Normalno zatvaranje resursa ---");
                 using (var manager = new WeatherResourceManager())
                 {
@@ -33,8 +33,8 @@ namespace Common
                     Console.WriteLine("✅ Test linija zapisana");
                 } // Dispose se poziva automatski ovde
                 Console.WriteLine("✅ ResourceManager automatski disposed");
-                
-                // Test 2: Exception during operation
+
+                // Test 2: Izuzetak tokom operacije
                 Console.WriteLine("\n--- Test 2: Izuzetak tokom operacije ---");
                 try
                 {
@@ -52,8 +52,8 @@ namespace Common
                     Console.WriteLine($"✅ Očekivani izuzetak uhvaćen: {ex.Message}");
                     Console.WriteLine("✅ ResourceManager je automatski disposed uprkos izuzetku");
                 }
-                
-                // Test 3: Manual dispose
+
+                // Test 3: Manuelno zatvaranje resursa
                 Console.WriteLine("\n--- Test 3: Manuelno zatvaranje ---");
                 var manualManager = new WeatherResourceManager();
                 manualManager.InitializeStreams(testDir);
@@ -76,7 +76,7 @@ namespace Common
             }
             finally
             {
-                // Cleanup test directory
+                // Čišćenje test direktorijuma
                 try
                 {
                     if (Directory.Exists(testDir))
@@ -99,7 +99,7 @@ namespace Common
             
             try
             {
-                // Create test CSV file
+                // Kreiranje test CSV fajla
                 File.WriteAllText(testCsv, "Date,T,Pressure,Tpot,Tdew,Rh,Sh\n2024-01-01,20.5,1013.25,293.65,15.2,73.8,11.2\n");
                 Console.WriteLine($"✅ Test CSV fajl kreiran: {testCsv}");
                 
@@ -111,7 +111,7 @@ namespace Common
             }
             finally
             {
-                // Cleanup test files
+                // Čišćenje test fajlova
                 try
                 {
                     if (File.Exists(testCsv)) File.Delete(testCsv);
