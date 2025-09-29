@@ -14,7 +14,7 @@ namespace Server
         {
             try
             {
-                // Create and open the WCF host for WeatherService
+                // Kreiranje i otvaranje WCF hosta za WeatherService
                 using (ServiceHost weatherHost = new ServiceHost(typeof(WeatherService)))
                 {
                     weatherHost.Open();

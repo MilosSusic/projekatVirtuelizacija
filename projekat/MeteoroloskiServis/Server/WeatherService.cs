@@ -9,8 +9,8 @@ using System.ServiceModel;
 namespace Server
 {
     /// <summary>
-    /// WeatherService (WCF) - provides methods for clients to 
-    /// send weather data, manage sessions and handle alerts.
+    /// WeatherService (WCF) - pruža metode klijentima za 
+    /// slanje meteoroloških podataka, upravljanje sesijama i generisanje alarma.
     /// </summary>
 
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Single)]
@@ -19,23 +19,23 @@ namespace Server
         private readonly string storageRoot = ConfigurationManager.AppSettings["weatherStoragePath"] ?? "WeatherStorage";
         private WeatherResourceManager _resourceManager;
         private string _currentSessionId;
-        
-        // Threshold values
+
+        // Pragovi (threshold) za generisanje upozorenja
         private double _tThreshold;
         private double _rhThreshold; 
         private double _dewThreshold;
         private double _deviationPct;
-        
-        // Analytics state
+
+        // Stanje analitike
         private double? _lastTemperature;
         private double? _lastRH;
         private double? _lastTdew;
         private double _runningMeanT;
         private double _runningMeanRH;
         private double _runningMeanTdew;
-        private long _count;    // total number of samples processed
-        private int _written;   // number of samples successfully written
-        private readonly object _lockObject = new object();
+        private long _count;     // ukupan broj obrađenih uzoraka
+        private int _written;     // broj uspešno zapisanih uzoraka
+        private readonly object _lockObject = new object();     // za thread-safe operacije
 
         // Events for weather monitoring
         public event EventHandler<string> OnTransferStarted;
@@ -49,7 +49,7 @@ namespace Server
             
             // Subscribe to events for logging
             OnTransferStarted += (s, m) => Console.WriteLine($"[START] {m}");
-            OnSampleReceived += (s, m) => Console.Write('.');
+            OnSampleReceived += (s, m) => Console.Write('.');   // vizuelna indikacija prijema uzorka
             OnTransferCompleted += (s, m) => Console.WriteLine($"\n[END] {m}");
             OnWarningRaised += (s, m) => 
             {
@@ -59,17 +59,18 @@ namespace Server
             };
         }
 
+        // Pokreće novu meteorološku sesiju sa zadatim meta podacima
         public WeatherAck StartSession(WeatherSessionMeta meta)
         {
             lock (_lockObject)
             {
-                // Thread-safe: only one thread can initialize session at a time
+                // Thread-safe: samo jedan thread može da inicijalizuje sesiju
                 try
                 {
                     if (meta == null)
                         return new WeatherAck { Success = false, Message = "Meta is null", Status = "NACK" };
 
-                    // Validate thresholds
+                    // Validacija pragova
                     if (meta.TThreshold <= 0)
                         return new WeatherAck { Success = false, Message = "TThreshold must be positive", Status = "NACK" };
                     if (meta.RHThreshold <= 0)
@@ -90,7 +91,7 @@ namespace Server
                     
                     _resourceManager.InitializeStreams(sessionDir);
 
-                    // Reset analytics state
+                    // Resetovanje stanja analitike
                     _lastTemperature = null;
                     _lastRH = null;
                     _lastTdew = null;
@@ -100,7 +101,7 @@ namespace Server
                     _count = 0;
                     _written = 0;
 
-                    // Notify external subscribers and log start
+                    // Obaveštavanje pretplaćenih i logovanje
                     OnTransferStarted?.Invoke(this, $"Meteorološka sesija {_currentSessionId} pokrenuta u {meta.StartedAt:O}\nFolder: {sessionDir}");
                     Console.WriteLine($"✅ Sesija uspešno pokrenuta - threshold vrednosti: T={_tThreshold}°C, RH={_rhThreshold}%, DEW={_dewThreshold}°C, Odstupanje={_deviationPct}%");
                     
@@ -113,11 +114,12 @@ namespace Server
             }
         }
 
+        // Obrada pojedinačnog uzorka koji šalje klijent
         public WeatherAck PushSample(WeatherSample sample)
         {
             lock (_lockObject)
             {
-                // Thread-safe: ensures only one thread processes a sample at a time
+                // Thread-safe: obezbeđuje da samo jedan thread obrađuje uzorak u isto vreme
                 try
                 {
                     if (_resourceManager?.MeasurementsWriter == null)
@@ -128,7 +130,7 @@ namespace Server
 
                     Console.WriteLine($"\n📥 Primljen uzorak: T={sample.T:F2}°C, RH={sample.Rh:F2}%, Tdew={sample.Tdew:F2}°C, P={sample.Pressure:F2}mbar");
 
-                    // Validate sample
+                    // Validacija uzorka
                     var valid = ValidateSample(sample, out string valError);
                     if (!valid)
                     {
@@ -137,7 +139,7 @@ namespace Server
                         return new WeatherAck { Success = false, Message = valError, Status = "IN_PROGRESS" };
                     }
 
-                    // Write to measurements file
+                    // Upis u fajl sa merenjima
                     try
                     {
                         _resourceManager.MeasurementsWriter.WriteLine(string.Join(",",
@@ -150,7 +152,7 @@ namespace Server
                             sample.Sh.ToString(CultureInfo.InvariantCulture)));
                         _written++;
 
-                        // Log first few samples fully for debugging
+                        // Logovanje prvih nekoliko uzoraka radi debugging-a
                         if (_written <= 3)
                         {
                             Console.WriteLine($"\n✅ Server prihvatio uzorak {_written}: {sample}");
@@ -163,7 +165,7 @@ namespace Server
                         return new WeatherAck { Success = false, Message = ioex.Message, Status = "IN_PROGRESS" };
                     }
 
-                    // ===== ANALYTICS 1: Detection of sudden temperature change (ΔT) =====
+                    // ===== ANALITIKA: Detekcija naglih promena temperature (ΔT) =====
                     if (_lastTemperature.HasValue)
                     {
 
@@ -180,7 +182,7 @@ namespace Server
                     }
                     _lastTemperature = sample.T;
 
-                    // ===== ANALYTICS 2: Detection of sudden humidity change (ΔRH) =====
+                    // ===== ANALITIKA: Nagla promena relativne vlage (ΔRH) =====
                     if (_lastRH.HasValue)
                     {
                         double deltaRH = sample.Rh - _lastRH.Value;
@@ -195,7 +197,7 @@ namespace Server
                     }
                     _lastRH = sample.Rh;
 
-                    // ===== ANALYTICS 3: Detection of sudden dew point change (ΔDEW) =====
+                    // ===== ANALITIKA: Nagla promena tačke rosišta (ΔDEW) =====
                     if (_lastTdew.HasValue)
                     {
                         double deltaDEW = sample.Tdew - _lastTdew.Value;
@@ -210,7 +212,7 @@ namespace Server
                     }
                     _lastTdew = sample.Tdew;
 
-                    // ===== Running mean and ±25% deviation check for temperature =====
+                    // ===== Analiza: prosek i odstupanje ±25% za temperaturu =====
                     _runningMeanT = ((_runningMeanT * _count) + sample.T) / (_count + 1);
                     double lowT = _runningMeanT * (1 - _deviationPct / 100.0);
                     double highT = _runningMeanT * (1 + _deviationPct / 100.0);
@@ -243,6 +245,7 @@ namespace Server
             }
         }
 
+        // Završava trenutnu sesiju i oslobađa resurse
         public WeatherAck EndSession()
         {
             lock (_lockObject)
@@ -256,6 +259,7 @@ namespace Server
             }
         }
 
+        // Serializacija uzorka u CSV format
         private static string SerializeSample(WeatherSample s)
         {
             if (s == null) return "<null>";
@@ -266,24 +270,24 @@ namespace Server
         {
             error = string.Empty;
             if (s == null) { error = "Sample is null"; return false; }
-            
-            // Validate Temperature
+
+            // Validacija temperature
             if (double.IsNaN(s.T) || double.IsInfinity(s.T))
             { error = $"Invalid Temperature: {s.T}"; return false; }
-            
-            // Validate Pressure 
+
+            // Validacija pritiska
             if (double.IsNaN(s.Pressure) || double.IsInfinity(s.Pressure) || s.Pressure <= 0)
             { error = $"Invalid Pressure: {s.Pressure}"; return false; }
-            
-            // Validate Relative Humidity
+
+            // Validacija relativne vlažnosti
             if (double.IsNaN(s.Rh) || double.IsInfinity(s.Rh) || s.Rh < 0 || s.Rh > 100)
             { error = $"Invalid Relative Humidity: {s.Rh}"; return false; }
-            
-            // Validate Dew Point Temperature
+
+            // Validacija temperature tačke rosišta
             if (double.IsNaN(s.Tdew) || double.IsInfinity(s.Tdew))
             { error = $"Invalid Dew Point Temperature: {s.Tdew}"; return false; }
-            
-            // Validate Date
+
+            // Validacija datuma
             if (s.Date == default(DateTime))
             { error = $"Invalid Date: {s.Date}"; return false; }
             
