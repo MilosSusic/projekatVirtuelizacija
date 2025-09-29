@@ -128,7 +128,7 @@ namespace Server
                         return new WeatherAck { Success = false, Message = "Session not started", Status = "NACK" };
                     }
 
-                    Console.WriteLine($"\n📥 Primljen uzorak: T={sample.T:F2}°C, RH={sample.Rh:F2}%, Tdew={sample.Tdew:F2}°C, P={sample.Pressure:F2}mbar");
+                    Console.WriteLine($"\n📥(Prenos u toku)Primljen uzorak: T={sample.T:F2}°C, RH={sample.Rh:F2}%, Tdew={sample.Tdew:F2}°C, P={sample.Pressure:F2}mbar");
 
                     // Validacija uzorka
                     var valid = ValidateSample(sample, out string valError);
