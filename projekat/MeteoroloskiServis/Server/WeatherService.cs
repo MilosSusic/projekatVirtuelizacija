@@ -136,7 +136,8 @@ namespace Server
                     {
                         Console.WriteLine($"\n❌ Server odbacio uzorak: {valError}");
                         _resourceManager.RejectsWriter?.WriteLine($"\"{valError.Replace("\"", "\"\"")}\",\"{SerializeSample(sample).Replace("\"", "\"\"")}\"");
-                        return new WeatherAck { Success = false, Message = valError, Status = "IN_PROGRESS" };
+                        throw new FaultException<CustomException>( new CustomException($"Nevalidan uzorak: {valError}"), new FaultReason("Greška pri validaciji uzorka"));
+                       // return new WeatherAck { Success = false, Message = valError, Status = "IN_PROGRESS" };
                     }
 
                     // Upis u fajl sa merenjima
