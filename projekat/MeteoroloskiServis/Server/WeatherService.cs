@@ -37,7 +37,7 @@ namespace Server
         private int _written;     // broj uspešno zapisanih uzoraka
         private readonly object _lockObject = new object();     // za thread-safe operacije
 
-        // Events for weather monitoring
+        // Događaji za praćenje vremenskih podataka
         public event EventHandler<string> OnTransferStarted;
         public event EventHandler<string> OnSampleReceived;
         public event EventHandler<string> OnTransferCompleted;
@@ -46,8 +46,8 @@ namespace Server
         public WeatherService()
         {
             _resourceManager = new WeatherResourceManager();
-            
-            // Subscribe to events for logging
+
+            // Pretplata na događaje radi logovanja
             OnTransferStarted += (s, m) => Console.WriteLine($"[START] {m}");
             OnSampleReceived += (s, m) => Console.Write('.');   // vizuelna indikacija prijema uzorka
             OnTransferCompleted += (s, m) => Console.WriteLine($"\n[END] {m}");
