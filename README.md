@@ -1,0 +1,251 @@
+DOKUMENTACIJA - SISTEM ZA MONITORING METEOROLOŠKIH PODATAKA
+============================================================
+
+PREGLED SISTEMA
+===============
+Ovaj sistem implementira monitoring i analizu meteoroloških podataka korišćenjem WCF servisa i fajl sistema. 
+Sistem se sastoji od tri glavne komponente:
+
+1. CLIENT - čita CSV fajlove sa meteorološkim podacima i šalje ih na server
+2. SERVER - prima podatke, validira ih, analizira anomalije i čuva rezultate
+3. COMMON - zajedničke biblioteke, ugovori i modeli podataka
+
+ARHITEKTURA SISTEMA
+===================
+CLIENT ↔ WCF SERVIS ↔ SERVER FAJL SISTEM
+
+- Client čita CSV fajlove iz Dataset foldera
+- Šalje podatke preko WCF servisa (net.tcp://localhost:4101/Weather)
+- Server prima podatke, validira ih, detektuje anomalije i čuva u fajlove
+- Sistem prati temperaturu, vlažnost, tačku rosišta, pritisak i specifičnu vlažnost u realnom vremenu
+
+KAKO POKRENUTI SISTEM
+======================
+
+KORAK 1: Otvaranje projekta
+---------------------------
+1. Otvorite Visual Studio
+2. File → Open → Project/Solution
+3. Otvorite: Meteorologija.sln
+
+KORAK 2: Pokretanje Servera
+---------------------------
+1. Desni klik na "Server" projekt u Solution Explorer
+2. Set as StartUp Project
+3. Pritisnite F5 ili Start
+4. Trebalo bi da vidite:
+   === METEOROLOŠKA STANICA SERVER ===
+   Service is running on: net.tcp://localhost:4101/
+   Waiting for client connections...
+
+KORAK 3: Pokretanje Klijenta
+----------------------------
+1. Desni klik na "Client" projekt
+2. Set as StartUp Project  
+3. Pritisnite F5 ili Start
+4. Trebalo bi da vidite:
+   === METEOROLOŠKA STANICA KLIJENT ===
+   Izaberite opciju:
+   1. Meteorološka stanica
+   2. Test Dispose Pattern-a
+   3. Izlaz
+
+KORAK 4: Korišćenje sistema
+---------------------------
+1. Unesite "1" za meteorološku stanicu
+2. Pritisnite Enter za default putanju ili unesite putanju do CSV fajla
+3. Sistem će automatski pronaći cleaned_weather.csv fajl
+4. Pratite prenos na oba konzolama
+5. Proverite generisane fajlove (korak 5)
+
+KORAK 5: Gde se čuvaju rezultati
+--------------------------------
+Rezultati se čuvaju u: Server\bin\Debug\WeatherStorage\<SessionId>\
+
+STRUKTURA PODATAKA
+==================
+
+CSV ULAZ (cleaned_weather.csv)
+------------------------------
+Format: date,p,T,Tpot,Tdew,rh,VPmax,VPact,VPdef,sh,H2OC,rho,wv,max. wv,wd,rain,raining,SWDR,PAR,max. PAR,Tlog
+
+Primer reda:
+2020-01-01 00:10:00,1008.89,0.71,273.18,-1.33,86.1,6.43,5.54,0.89,3.42,5.49,1280.62,1.02,1.6,224.3,0.0,0.0,0.0,0.0,0.0,11.45
+
+Glavne kolone koje sistem koristi:
+- date (kolona 0): Datum i vreme merenja
+- p (kolona 1): Pritisak u mbar
+- T (kolona 2): Temperatura u °C
+- Tpot (kolona 3): Potencijalna temperatura u K
+- Tdew (kolona 4): Tačka rosišta u °C
+- rh (kolona 5): Relativna vlažnost u %
+- sh (kolona 9): Specifična vlažnost u g/kg
+
+DOSTUPNI DATASET FAJLOVI
+========================
+Dataset\ folder sadrži:
+1. cleaned_weather.csv - Glavni dataset sa meteorološkim podacima (52,000+ redova)
+2. measurements_session.csv - Konvertovani fajl sa 100 redova za testiranje
+
+GENERISANI FAJLOVI
+==================
+
+1. measurements_session.csv - SVI PRIHVAĆENI PODACI
+   -------------------------------------------------
+   Lokacija: WeatherStorage\<SessionId>\measurements_session.csv
+   Sadrži: Sve validne sample-ove koji su prošli server validaciju
+   Format: Date,T,Pressure,Tpot,Tdew,Rh,Sh
+
+2. rejects.csv - ODBAČENI PODACI NA SERVERU
+   ----------------------------------------
+   Lokacija: WeatherStorage\<SessionId>\rejects.csv
+   Sadrži: Redove koje je server odbacio zbog nevalidnih podataka
+   Razlozi: Invalid Temperature, Invalid Pressure, Invalid Relative Humidity, Invalid Dew Point Temperature
+   Format: Reason,Line
+
+3. analytics_alerts.csv - UPOZORENJA I ANOMALIJE
+   ----------------------------------------------
+   Lokacija: WeatherStorage\<SessionId>\analytics_alerts.csv
+   Sadrži: Detektovane anomalije u realnom vremenu
+   Tipovi: TemperatureSpike, HumiditySpike, DewPointSpike, OutOfBandWarning
+   Format: Timestamp,AlertType,Message,Value,Threshold
+
+4. rejects_weather_client_*.csv - ODBAČENI PODACI NA KLIJENTU
+   -----------------------------------------------------------
+   Lokacija: Client\bin\Debug\Dataset\rejects_weather_client_<sessionId>.csv
+   Sadrži: Redove koje klijent nije mogao da parsira
+   Razlozi: Header redovi, prazni redovi, neispravne kolone
+
+ANALITIKA I UPOZORENJA
+======================
+
+TEMPERATURE SPIKE - Nagla promena temperature
+---------------------------------------------
+Trigger: |ΔT| > TThreshold (default: 2.0°C)
+Poruka: 🔴 TEMPERATURE SPIKE: ΔT=XX.XXX°C (IZNAD/ISPOD očekivanog) | Threshold: 2.0°C
+Primer: ΔT=3.5°C kada je prag 2.0°C
+
+HUMIDITY SPIKE - Nagla promena relativne vlažnosti
+--------------------------------------------------
+Trigger: |ΔRH| > RHThreshold (default: 10.0%)
+Poruka: 🔴 HUMIDITY SPIKE: ΔRH=XX.XXX% (IZNAD/ISPOD očekivanog) | Threshold: 10.0%
+Primer: ΔRH=15.5% kada je prag 10.0%
+
+DEW POINT SPIKE - Nagla promena tačke rosišta
+---------------------------------------------
+Trigger: |ΔDEW| > DEWThreshold (default: 1.5°C)
+Poruka: 🔴 DEW POINT SPIKE: ΔDEW=XX.XXX°C (IZNAD/ISPOD očekivanog) | Threshold: 1.5°C
+Primer: ΔDEW=2.8°C kada je prag 1.5°C
+
+OUT OF BAND WARNING - Odstupanje od proseka
+-------------------------------------------
+Trigger: T < Mean*(1-DeviationPercent/100) ili T > Mean*(1+DeviationPercent/100)
+Poruka: 🟡 OUT OF BAND: Temperature ISPOD/IZNAD očekivane vrednosti | T=XX.XXX°C < Mean: XX.XXX°C
+Primer: T=5.2°C kada je Mean=8.0°C i DeviationPercent=25%
+
+VALIDACIJA PODATAKA
+===================
+
+Server validira svaki sample na osnovu:
+--------------------------------------
+✓ T je konačan broj (nije NaN ili Infinity)
+✓ Pressure > 0 (pritisak mora biti pozitivan)
+✓ Rh ≥ 0 i Rh ≤ 100 (relativna vlažnost između 0-100%)
+✓ Tdew je konačan broj (nije NaN ili Infinity)
+✓ Date nije default vrednost
+
+DOGAĐAJI (EVENTS) SISTEMA
+==========================
+
+OnTransferStarted
+-----------------
+Kada: Na početku StartSession
+Poruka: Meteorološka sesija <sessionId> pokrenuta u <timestamp>
+Folder: <sessionDirectory>
+
+OnSampleReceived  
+----------------
+Kada: Za svaki prihvaćen sample
+Indikator: Tačka (.) u konzoli
+
+OnTransferCompleted
+-------------------
+Kada: Na EndSession
+Poruka: Meteorološka sesija <sessionId> završena (zapisano=XX)
+
+OnWarningRaised
+---------------
+Kada: Detektovana anomalija
+Poruke: 🔴 TEMPERATURE/HUMIDITY/DEW POINT SPIKE, 🟡 OUT OF BAND WARNING
+
+TIPIČNI TOK IZVRŠAVANJA
+=======================
+
+1. [SERVER] Pokretanje WeatherService na port 4101
+2. [CLIENT] Konekcija na server
+3. [CLIENT] Čitanje cleaned_weather.csv (prvih 100 redova)
+4. [CLIENT] StartSession → server kreira folder strukturu
+5. [CLIENT] PushSample (red po red) → server validira i čuva
+6. [SERVER] Analitika u realnom vremenu → generisanje alerta
+7. [CLIENT] EndSession → zatvaranje resursa
+8. [REZULTAT] Fajlovi sačuvani u WeatherStorage
+
+TEHNIČKA IMPLEMENTACIJA
+========================
+
+WCF Servis
+----------
+- Binding: netTcpBinding sa streaming podrškom
+- Endpoint: net.tcp://localhost:4101/Weather
+- Timeout: 10 min za receive, 30s za send
+- InstanceContextMode: Single (singleton)
+- ConcurrencyMode: Single (thread-safe)
+
+CSV Parsing
+-----------
+- Tolerantno parsiranje: podržava ",", ";" ili tab separator
+- Automatsko preskakanje header redova (date, p, T, Tpot, Tdew, rh, sh)
+- Fallback parsiranje preko regex za numeričke tokene
+- Invariant culture sa tačkom kao decimalnim separatorom
+- Mapiranje polja iz cleaned_weather.csv formata u WeatherSample format
+
+Dispose Pattern
+---------------
+- Svi StreamReader, FileStream automatski zatvoreni
+- ICommunicationObject kanali zatvoreni u finally bloku
+- Thread-safe dispose sa lock objektom
+
+
+STRUKTURA PROJEKTA
+==================
+
+Meteorologija.sln
+├── Common (biblioteka)
+│   ├── WeatherContracts.cs        # WCF ugovori i interfejsi
+│   ├── WeatherSample.cs          # Model podataka i CSV parser
+│   ├── WeatherResourceManager.cs # Upravljanje resursima
+│   ├── CustomException.cs        # Custom greške
+│   └── AssemblyInfo.cs           # Assembly informacije
+├── Server (EXE)
+│   ├── WeatherService.cs         # WCF implementacija
+│   ├── Program.cs                # Main server
+│   ├── App.config                # Konfiguracija
+│   └── Properties\
+│       └── AssemblyInfo.cs
+├── Client (EXE)
+│   ├── Program.cs                # Main klijent
+│   ├── WeatherClient.cs          # WCF klijent
+│   ├── WeatherCsvReader.cs       # CSV parser
+│   ├── WeatherDisposeTester.cs   # Test dispose pattern-a
+│   ├── App.config                # Konfiguracija
+│   ├── Dataset\                  # CSV fajlovi
+│   │   └── cleaned_weather.csv   # Glavni dataset (52,000+ redova)
+│   └── Properties\
+│       └── AssemblyInfo.cs
+└── bin\Debug\                    # Kompajlirani fajlovi
+    ├── Client.exe
+    ├── Server.exe
+    └── Common.dll
+
+
+
