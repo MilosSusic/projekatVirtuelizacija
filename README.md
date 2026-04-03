@@ -216,36 +216,6 @@ Dispose Pattern
 - Thread-safe dispose sa lock objektom
 
 
-STRUKTURA PROJEKTA
-==================
-
-Meteorologija.sln
-├── Common (biblioteka)
-│   ├── WeatherContracts.cs        # WCF ugovori i interfejsi
-│   ├── WeatherSample.cs          # Model podataka i CSV parser
-│   ├── WeatherResourceManager.cs # Upravljanje resursima
-│   ├── CustomException.cs        # Custom greške
-│   └── AssemblyInfo.cs           # Assembly informacije
-├── Server (EXE)
-│   ├── WeatherService.cs         # WCF implementacija
-│   ├── Program.cs                # Main server
-│   ├── App.config                # Konfiguracija
-│   └── Properties\
-│       └── AssemblyInfo.cs
-├── Client (EXE)
-│   ├── Program.cs                # Main klijent
-│   ├── WeatherClient.cs          # WCF klijent
-│   ├── WeatherCsvReader.cs       # CSV parser
-│   ├── WeatherDisposeTester.cs   # Test dispose pattern-a
-│   ├── App.config                # Konfiguracija
-│   ├── Dataset\                  # CSV fajlovi
-│   │   └── cleaned_weather.csv   # Glavni dataset (52,000+ redova)
-│   └── Properties\
-│       └── AssemblyInfo.cs
-└── bin\Debug\                    # Kompajlirani fajlovi
-    ├── Client.exe
-    ├── Server.exe
-    └── Common.dll
 
 
 
